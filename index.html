@@ -199,60 +199,87 @@ socialShareButtons.forEach(function (button) {
  
 	<!--================Offcanvus Menu Area =================-->
 	<!-- Side Menu Structure -->
+<!-- Side Menu Structure -->
 <div class="side_menu">
-		<a class="logo" href="#">
-			<img src="img/logo.png" alt="">
-		</a>
-		<ul class="list menu_right">
-			<li>
-				<a href="#home">Home</a>
-			</li>
-			<li>
-				<a href="#about">About</a>
-			</li>
-			<li>
-				<a href="#menu">Menu</a>
-			</li>
-			<li>
-				<a href="#book-table">Book a table</a>
-			</li>
-                         <li>
-				<a href="#gallery">Gallery</a>
-			</li>
-                        <li>
-				<a href="#review">Review</a>
-			</li>
-			<li>
-				<a href="#reservation">Reservation</a>
-			</li>
-			
-			<li>
-				<a href="#contact">Contact</a>
-			</li>
-		</ul>
-		<ul class="list social">
-			<li>
-				<a href="#">
-					<i class="fa fa-facebook"></i>
-				</a>
-			</li>
-			<li>
-				<a href="#">
-					<i class="fa fa-twitter"></i>
-				</a>
-			</li>
-			<li>
-				<a href="#">
-					<i class="fa fa-dribbble"></i>
-				</a>
-			</li>
-			<li>
-				<a href="#">
-					<i class="fa fa-behance"></i>
-				</a>
-			</li>
-		</ul>
-	</div>
+  <a class="logo" href="#">
+    <img src="img/logo.png" alt="">
+  </a>
+  <ul class="list menu_right">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#book-table">Book a table</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#review">Review</a></li>
+    <li><a href="#reservation">Reservation</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <ul class="list social">
+    <li><a href="#"><i class="fas fa-facebook"></i></a></li>
+    <li><a href="#"><i class="fas fa-twitter"></i></a></li>
+    <li><a href="#"><i class="fas fa-dribbble"></i></a></li>
+    <li><a href="#"><i class="fas fa-behance"></i></a></li>
+  </ul>
+</div>
+
+<!-- CSS for Smooth Scrolling and Menu Style -->
+<style>
+  /* Smooth scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Example styling for side menu */
+  .side_menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    color: #fff;
+    padding-top: 20px;
+  }
+
+  .side_menu .logo img {
+    width: 100%;
+  }
+
+  .side_menu ul.list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+  }
+
+  .side_menu ul.list.menu_right li a,
+  .side_menu ul.list.social li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+  }
+
+  .side_menu ul.list.social li a i {
+    font-size: 20px;
+  }
+</style>
+
+<!-- JavaScript to Close Side Menu After Click (Optional) -->
+<script>
+  document.querySelectorAll(".side_menu .menu_right a").forEach(function(link) {
+    link.addEventListener("click", function() {
+      if (window.innerWidth <= 768) { // Only close on mobile
+        document.querySelector(".side_menu").classList.remove("open");
+      }
+    });
+  });
+
+  // Optionally, you can add functionality to toggle the menu
+  function toggleSideMenu() {
+    document.querySelector(".side_menu").classList.toggle("open");
+  }
+</script>
+
 
 	<!--================End Offcanvus Menu Area =================-->
 
